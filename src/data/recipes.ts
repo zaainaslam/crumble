@@ -29,7 +29,7 @@ export const ingredient: IIngredient = {
   id: 1,
   name: "Flour",
   amount: 500,
-  unit: UnitType.MILLILITER,
+  unit: UnitType.GRAM,
 };
 
 export const pumpkinPie: IRecipe = {

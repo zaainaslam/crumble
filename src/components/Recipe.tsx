@@ -4,6 +4,18 @@ import Ingredient from "./Ingredient.tsx";
 import { pumpkinPie } from "../data/recipes";
 
 function Recipe({ id, name, ingredients }: IRecipe) {
+  // var ings = [];
+
+  // for (let i = 0; i < ingredients.length; i++) {
+  //   ings.push(
+  //     <Ingredient
+  //       ingName={ingredients[i].name}
+  //       ingAmount={ingredients[i].amount}
+  //       ingUnit={ingredients[i].unit}
+  //     />
+  //   );
+  // }
+
   return (
     <div>
       {name}

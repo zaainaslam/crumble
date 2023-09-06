@@ -1,0 +1,4 @@
+1) about the ingredient loop for recipe component (in typescript)
+2) why am I getting all these type errors
+3) which type do I use for onClick function
+4) make everything stay on same line
