@@ -1,27 +1,44 @@
 // type UnitType = "g" | "ml" | "pcs";
 
-enum UnitType {
+export enum UnitType {
   GRAM = "g",
   MILLILITER = "ml",
   PIECE = "pcs",
 }
 
-interface IIngredient {
+
+export interface IIngredient {
   id: number;
   name: string;
   amount: number;
   unit: UnitType;
 }
 
-interface IRecipe {
+
+
+
+
+export interface IRecipe {
   id: number;
   name: string;
   ingredients: IIngredient[];
 }
 
-const ingredient: IIngredient = {
+
+export const ingredient: IIngredient = {
   id: 1,
   name: "Flour",
   amount: 500,
   unit: UnitType.MILLILITER,
 };
+
+export const pumpkinPie: IRecipe = {
+  id: 1,
+  name: "Pumpkin Pie",
+  ingredients: [ingredient]
+
+}
+
+
+
+
