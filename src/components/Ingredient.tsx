@@ -1,36 +1,34 @@
-import "../data/recipes";
+import { IIngredient } from "../data/recipes";
 import SubButton from "./SubButton";
 import { useState } from "react";
 
 function Ingredient({ id, name, amount, unit }: IIngredient) {
-  const [menuOpen, setMenuOpen] = useState({ boolean: false });
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [buttonContents, setButtonContents] = useState<string>("open");
 
-  function handleMenuClick(isOpen: boolean) {
-    if (isOpen === true) {
-      setMenuOpen(false);
+  const returnContents: [] = [];
+
+  function handleMenuClick() {
+    setMenuOpen(!menuOpen);
+
+    if (menuOpen) {
+      setButtonContents("open");
     } else {
-      setMenuOpen(true);
+      setButtonContents("closed");
     }
+
+    console.log(menuOpen);
   }
 
-  if (menuOpen === false) {
-    return (
-      <div>
-        {name}, {amount}
-        {unit}{" "}
-        <SubButton
-          value="substitute..."
-          onMenuClick={() => handleMenuClick(true)}
-        />
-      </div>
-    );
-  } else {
+  returnContents.push();
+
+  return (
     <div>
       {name}, {amount}
       {unit}{" "}
-      <SubButton value="menu open" onMenuClick={() => handleMenuClick(false)} />
-    </div>;
-  }
+      <SubButton value={buttonContents} onMenuClick={() => handleMenuClick()} />
+    </div>
+  );
 }
 
 export default Ingredient;

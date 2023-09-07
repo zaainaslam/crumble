@@ -1,7 +1,7 @@
 //import React from "react";
 import "../data/recipes";
 import Ingredient from "./Ingredient.tsx";
-import { pumpkinPie } from "../data/recipes";
+import { IRecipe } from "../data/recipes";
 
 function Recipe({ id, name, ingredients }: IRecipe) {
   // var ings = [];
