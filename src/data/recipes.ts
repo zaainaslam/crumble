@@ -1,4 +1,8 @@
+import "./recipes.json"
+
 // type UnitType = "g" | "ml" | "pcs";
+
+
 
 export enum UnitType {
   GRAM = "g",
@@ -61,6 +65,8 @@ export const pumpkinPie: IRecipe = {
   ingredients: [ingredient1]
 
 }
+
+for (let i = 0; i <)
 
 
 
