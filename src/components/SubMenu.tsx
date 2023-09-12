@@ -1,5 +1,7 @@
+import "../css/SubMenu.css";
+
 function SubMenu() {
-  return <menu>1</menu>;
+  return <menu className="SubMenu"></menu>;
 }
 
 export default SubMenu;

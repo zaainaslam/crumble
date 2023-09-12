@@ -6,6 +6,13 @@ export enum UnitType {
   PIECE = "pcs",
 }
 
+export interface IIngredientList {
+  id: number;
+  name: string;
+  category: string;
+  ratio: number;
+}
+
 
 export interface IIngredient {
   id: number;
@@ -24,18 +31,34 @@ export interface IRecipe {
   ingredients: IIngredient[];
 }
 
-
-export const ingredient: IIngredient = {
+export const whiteFlour: IIngredientList = {
   id: 1,
-  name: "Flour",
+  name: "White Flour",
+  category: "flour",
+  ratio: 1
+};
+
+
+export const blackFlour: IIngredientList = {
+  id: 1,
+  name: "Black Flour",
+  category: "flour",
+  ratio: 0.5
+};
+
+
+export const ingredient1: IIngredient = {
+  id: 1,
+  name: "White Flour",
   amount: 500,
   unit: UnitType.GRAM,
 };
 
+
 export const pumpkinPie: IRecipe = {
   id: 1,
   name: "Pumpkin Pie",
-  ingredients: [ingredient]
+  ingredients: [ingredient1]
 
 }
 

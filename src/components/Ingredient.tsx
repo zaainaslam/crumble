@@ -1,5 +1,6 @@
 import { IIngredient } from "../data/recipes";
 import SubButton from "./SubButton";
+import SubMenu from "./SubMenu";
 import "../css/Ingredient.css";
 import { useState } from "react";
 
@@ -23,13 +24,30 @@ function Ingredient({ id, name, amount, unit }: IIngredient) {
 
   returnContents.push();
 
-  return (
-    <div className="Ingredient">
-      {name}, {amount}
-      {unit}{" "}
-      <SubButton value={buttonContents} onMenuClick={() => handleMenuClick()} />
-    </div>
-  );
+  if (!menuOpen) {
+    return (
+      <div className="Ingredient">
+        {name}, {amount}
+        {unit}{" "}
+        <SubButton
+          value={buttonContents}
+          onMenuClick={() => handleMenuClick()}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="Ingredient">
+        {name}, {amount}
+        {unit}{" "}
+        <SubButton
+          value={buttonContents}
+          onMenuClick={() => handleMenuClick()}
+        />
+        <SubMenu />
+      </div>
+    );
+  }
 }
 
 export default Ingredient;
