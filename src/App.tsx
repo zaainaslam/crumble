@@ -1,14 +1,14 @@
 import "./App.css";
 import Recipe from "./components/Recipe";
-import { pumpkinPie } from "./data/recipes";
+import { recipe1 } from "./data/recipes";
 
 function App() {
   return (
     <>
       <Recipe
-        id={pumpkinPie.id}
-        name={pumpkinPie.name}
-        ingredients={pumpkinPie.ingredients}
+        id={recipe1.id}
+        name={recipe1.name}
+        ingredients={recipe1.ingredients}
       />
     </>
   );

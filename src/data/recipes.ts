@@ -1,4 +1,4 @@
-import "./recipes.json"
+import recipes from "./recipes.json"
 
 // type UnitType = "g" | "ml" | "pcs";
 
@@ -59,14 +59,30 @@ export const ingredient1: IIngredient = {
 };
 
 
-export const pumpkinPie: IRecipe = {
-  id: 1,
-  name: "Pumpkin Pie",
-  ingredients: [ingredient1]
+
+
+let ingList: IIngredient[] = [];
+
+for (let i = 0; i < recipes.pumpkinPie.ingredients.length; i++) {
+
+
+  let ingArray: IIngredient = {
+    id: i,
+    name: recipes.pumpkinPie.ingredients[i].name,
+    amount: recipes.pumpkinPie.ingredients[i].amount,
+    unit: UnitType.GRAM
+  };
+
+  ingList.push(ingArray);
 
 }
 
-for (let i = 0; i <)
+export const recipe1: IRecipe = {
+  id: 1,
+  name: recipes.pumpkinPie.name,
+  ingredients: ingList
+
+}
 
 
 
