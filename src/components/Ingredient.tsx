@@ -1,5 +1,6 @@
 import { IIngredient } from "../data/recipes";
 import SubButton from "./SubButton";
+import "../css/Ingredient.css";
 import { useState } from "react";
 
 function Ingredient({ id, name, amount, unit }: IIngredient) {
@@ -23,7 +24,7 @@ function Ingredient({ id, name, amount, unit }: IIngredient) {
   returnContents.push();
 
   return (
-    <div>
+    <div className="Ingredient">
       {name}, {amount}
       {unit}{" "}
       <SubButton value={buttonContents} onMenuClick={() => handleMenuClick()} />

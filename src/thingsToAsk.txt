@@ -1,5 +1,1 @@
-//1) about the ingredient loop for recipe component (in typescript)
-//2) why am I getting all these type errors
-//3) which type do I use for onClick function
-4) make everything stay on same line (css)
-5) 
+//1) what the fuck is going on with my loop in Recipe file? Why is ings not working

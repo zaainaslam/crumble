@@ -1,3 +1,5 @@
+import "../css/SubButton.css";
+
 interface subMenuProps {
   value: string;
   onMenuClick: any;
@@ -5,7 +7,7 @@ interface subMenuProps {
 
 function SubButton({ value, onMenuClick }: subMenuProps) {
   return (
-    <div>
+    <div className="SubButton">
       <button onClick={onMenuClick}>{value} </button>
     </div>
   );

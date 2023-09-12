@@ -5,29 +5,27 @@ import Ingredient from "./Ingredient.tsx";
 import { IRecipe } from "../data/recipes";
 
 function Recipe({ id, name, ingredients }: IRecipe) {
-  // var ings = [];
+  let ings: any[] = [];
 
-  // for (let i = 0; i < ingredients.length; i++) {
-  //   ings.push(
-  //     <Ingredient
-  //       ingName={ingredients[i].name}
-  //       ingAmount={ingredients[i].amount}
-  //       ingUnit={ingredients[i].unit}
-  //     />
-  //   );
-  // }
-
-  return (
+  ings.push(
     <div className="Recipe">
-      {name}
+    {name}
+    );
+
+  for (let i = 0; i < ingredients.length; i++) {
+    ings.push(
       <Ingredient
         id={ingredients[0].id}
         name={ingredients[0].name}
         amount={ingredients[0].amount}
         unit={ingredients[0].unit}
       />
-    </div>
-  );
+    );
+  }
+
+  ings.push(</div>);
+
+  return ings;
 }
 
 export default Recipe;
