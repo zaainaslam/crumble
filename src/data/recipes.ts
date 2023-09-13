@@ -68,7 +68,7 @@ for (let i = 0; i < recipes.pumpkinPie.ingredients.length; i++) {
 
   let ingArray: IIngredient = {
     id: i,
-    name: recipes.pumpkinPie.ingredients[i].name,
+    name: recipes.pumpkinPie.ingredients[i].id,
     amount: recipes.pumpkinPie.ingredients[i].amount,
     unit: UnitType.GRAM
   };

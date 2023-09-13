@@ -32,6 +32,24 @@ function Recipe({ id, name, ingredients }: IRecipe) {
         amount={ingredients[1].amount}
         unit={ingredients[1].unit}
       />
+      <Ingredient
+        id={ingredients[2].id}
+        name={ingredients[2].name}
+        amount={ingredients[2].amount}
+        unit={ingredients[2].unit}
+      />
+      <Ingredient
+        id={ingredients[3].id}
+        name={ingredients[3].name}
+        amount={ingredients[3].amount}
+        unit={ingredients[3].unit}
+      />
+      <Ingredient
+        id={ingredients[4].id}
+        name={ingredients[4].name}
+        amount={ingredients[4].amount}
+        unit={ingredients[4].unit}
+      />
     </div>
   );
 }

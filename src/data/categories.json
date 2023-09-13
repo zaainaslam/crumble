@@ -1,5 +1,12 @@
 {
-    "fats": {
-        ""
+    "flour": {
+        "whiteFlour" : {
+            "id" : 1,
+            "ratio" : 1
+        },
+        "blackFlour" : {
+            "id" : 1,
+            "ratio" : 0.5
+        }
     }
 }

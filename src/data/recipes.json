@@ -4,27 +4,27 @@
             "recipeId" : 1,
             "name" : "Pumpkin Pie Cookie",
             "ingredients" : [{
-                    "name" : "cowButter",
+                    "id" : "cowButter",
                     "amount" : 1,
                     "unit" : "cup"
             },
             {
-                    "name" : "egg",
+                    "id" : "chickenEgg",
                     "amount" : 2,
                     "unit" : "unit"
             },
             {
-                    "name" : "whiteSugar",
+                    "id" : "whiteSugar",
                     "amount" : 3.75,
                     "unit" : "cup"
             },
             {
-                    "name" : "wheatFlour",
+                    "id" : "whiteFlour",
                     "amount" : 2,
                     "unit" : "cup"
             },
             {
-                    "name" : "pumpkin",
+                    "id" : "pumpkin",
                     "amount" : 1,
                     "unit" : "unit"
         }]
@@ -33,27 +33,27 @@
             "recipeId" : 3,
             "name" : "Herb Cookie",
             "ingredients" : [{
-                "name" : "almondButter",
+                "id" : "almondButter",
                 "amount" : 1,
                 "unit" : "cup"
             },
             {
-                "name" : "flaxseedMeal",
+                "id" : "flaxseedMeal",
                 "amount" : 1,
                 "unit" : "gram"
             },
             {
-                "name" : "coconutSugar",
+                "id" : "coconutSugar",
                 "amount" : 0.5,
                 "unit" : "cup"
             },
             {
-                "name" : "oats",
+                "id" : "oats",
                 "amount" : 3,
                 "unit" : "cup"
             },
             {
-                "name" : "oregano",
+                "id" : "oregano",
                 "amount" : 67,
                 "unit" : "gram"
             }
