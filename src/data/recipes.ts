@@ -1,4 +1,6 @@
 import recipes from "./recipes.json"
+import ingredients from "./ingredients.json"
+import categories from "./categories.json"
 
 // type UnitType = "g" | "ml" | "pcs";
 
@@ -10,17 +12,26 @@ export enum UnitType {
   PIECE = "pcs",
 }
 
+export interface ICategory {
+  id :string,
+  name: string,
+  default: string,
+  ingredients: {id:string, ratio: number}[]
+}
+
 export interface IIngredientList {
-  id: number;
+  id: string;
   name: string;
-  category: string;
-  ratio: number;
+  desc: string;
+  calories: number;
 }
 
 
 export interface IIngredient {
-  id: number;
+  id: string;
   name: string;
+  desc: string,
+  calories: number,
   amount: number;
   unit: UnitType;
 }
@@ -35,52 +46,77 @@ export interface IRecipe {
   ingredients: IIngredient[];
 }
 
-export const whiteFlour: IIngredientList = {
-  id: 1,
-  name: "White Flour",
-  category: "flour",
-  ratio: 1
-};
 
 
-export const blackFlour: IIngredientList = {
-  id: 1,
-  name: "Black Flour",
-  category: "flour",
-  ratio: 0.5
-};
+let masterIngList: IIngredientList[] = [];
 
 
-export const ingredient1: IIngredient = {
-  id: 1,
-  name: "White Flour",
-  amount: 500,
-  unit: UnitType.GRAM,
-};
+
+for (let i = 0; i < ingredients.length; i++) {
 
 
+  let masterIngArray: IIngredientList = {
+    id: ingredients[i].id,
+    name: ingredients[i].name,
+    desc: ingredients[i].desc,
+    calories: ingredients[i].calories
+  };
+
+  masterIngList.push(masterIngArray);
+
+}
 
 
 let ingList: IIngredient[] = [];
 
 for (let i = 0; i < recipes.pumpkinPie.ingredients.length; i++) {
 
+  for(let ing of masterIngList){
 
-  let ingArray: IIngredient = {
-    id: i,
-    name: recipes.pumpkinPie.ingredients[i].id,
-    amount: recipes.pumpkinPie.ingredients[i].amount,
-    unit: UnitType.GRAM
-  };
 
-  ingList.push(ingArray);
+    if (ing.id ===  recipes.pumpkinPie.ingredients[i].id) {
 
+
+    let ingArray: IIngredient = {
+  
+      id: ing.id,
+      name: ing.name,
+      desc: ing.desc,
+      calories: ing.calories,
+      amount: recipes.pumpkinPie.ingredients[i].amount,
+      unit: UnitType.GRAM
+    };
+
+    console.log(true);
+
+    ingList.push(ingArray);
+
+  }
+
+}
 }
 
 export const recipe1: IRecipe = {
   id: 1,
   name: recipes.pumpkinPie.name,
   ingredients: ingList
+
+}
+
+//categories
+export var categoriesList : ICategory[] = [];
+
+for (let i = 0; i < categories.length; i++) {
+
+
+  let masterIngArray: ICategory = {
+    id: categories[i].id,
+    name: categories[i].name,
+    default: categories[i].default,
+    ingredients: categories[i].ingredients
+  };
+
+  categoriesList.push(masterIngArray);
 
 }
 

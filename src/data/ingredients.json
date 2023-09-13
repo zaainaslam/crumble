@@ -1,66 +1,65 @@
-
-{
-    "cowButter" : {
+[
+    {
             "id" : "cowButter",
             "name" : "Cow Butter",
             "desc" : "Only from organic cows",
             "calories" : 200
 
     },
-    "duckButter" : {
+    {
             "id" : "duckButter",
             "name" : "Duck Butter",
             "desc" : "From the lab, to your tummy!",
             "calories" : 123
 
         },
-    "chickenEgg" : {
+    {
             "id" : "chickenEgg",
             "name" : "Chicken Egg",
             "desc" : "Basic egg yes",
             "calories" : 5
         },
-    "horseEgg" : {
+    {
             "id" : "horseEgg",
             "name" : "Horse Egg",
             "desc" : "More efficient this way",
             "calories" : 1
         },
-    "whiteSugar" : {
+    {
             "id" : "whiteSugar",
             "name" : "White Sugar",
             "desc" : "Reclaimed sugar",
             "calories" : 999999
         },
-    "stripedSugar" : {
+    {
             "id" : "stripedSugar",
             "name" : "Striped Sugar",
             "desc" : "Pride edition",
             "calories" : 420
         },
-    "whiteFlour" : {
+    {
             "id" : "whiteFlour",
             "name" : "White Flour",
             "desc" : "This flour is 50% less soggy than regular flour",
-            "calories" : 780
+            "calories" : 665
         },
-    "blackFlour" : {
+    {
             "id" : "blackFlour",
             "name" : "Black Flour",
             "desc" : "It's just regular flour but marketed goth",
             "calories" : 666
         },
-    "pumpkin" : {
+    {
             "id" : "pumpkin",
-            "name" : "pumpkin",
+            "name" : "Pumpkin",
             "desc" : "They went extinct in 2026, this one is lab grown",
             "calories" : 55
         },
-    "fakePumpkin" : {
+    {
             "id" : "fakePumpkin",
             "name" : "I Can't Believe It's Not Pumpkin",
             "desc" : "Can you believe it isn't pumpkin?? (yes you can actually)",
             "calories" : 0.5
         }
     
-    }
+    ]

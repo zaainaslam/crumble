@@ -4,7 +4,7 @@ import SubMenu from "./SubMenu";
 import "../css/Ingredient.css";
 import { useState } from "react";
 
-function Ingredient({ id, name, amount, unit }: IIngredient) {
+function Ingredient({ id, name, desc, calories, amount, unit }: IIngredient) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [buttonContents, setButtonContents] = useState<string>("open");
 
@@ -44,7 +44,14 @@ function Ingredient({ id, name, amount, unit }: IIngredient) {
           value={buttonContents}
           onMenuClick={() => handleMenuClick()}
         />
-        <SubMenu />
+        <SubMenu
+          id={id}
+          name={name}
+          desc={desc}
+          calories={calories}
+          amount={amount}
+          unit={unit}
+        />
       </div>
     );
   }

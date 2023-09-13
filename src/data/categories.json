@@ -1,12 +1,15 @@
-{
-    "flour": {
-        "whiteFlour" : {
-            "id" : 1,
+[{
+    "id" : "flour",
+    "name" : "flour",
+    "default" : "whiteFlour",
+    "ingredients": [
+        {
+            "id" : "whiteFlour",
             "ratio" : 1
         },
-        "blackFlour" : {
-            "id" : 1,
+        {
+            "id" : "blackFlour",
             "ratio" : 0.5
         }
-    }
-}
+    ]
+}]
