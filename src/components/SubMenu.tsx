@@ -3,6 +3,7 @@ import { categoriesList } from "../data/recipes";
 import { IIngredientList } from "../data/recipes";
 import { IIngredient } from "../data/recipes";
 import { masterIngList } from "../data/recipes";
+import SubMenuButton from "./SubMenuButton";
 
 interface SubMenuProps {
   id: string;
@@ -14,6 +15,11 @@ interface SubMenuProps {
 }
 
 function SubMenu({ id, name, desc, calories, amount, unit }: SubMenuProps) {
+  function handleSubMenuButtonClick() {
+    console.log("clicked");
+    updateCurrentRecipe();
+  }
+
   function determineCategory(id: string) {
     for (let category of categoriesList) {
       for (let ingredient of category.ingredients) {
@@ -51,14 +57,20 @@ function SubMenu({ id, name, desc, calories, amount, unit }: SubMenuProps) {
     <menu className="SubMenu">
       <ul>Calories: {calories}</ul>
       <ul>{categoryOfIng.name}</ul>
-      <button>
-        {findIngredient(categoryOfIng.ingredients[0].id, masterIngList).name} (
-        {amount * categoryOfIng.ingredients[0].ratio})
-      </button>
-      <button>
-        {findIngredient(categoryOfIng.ingredients[1].id, masterIngList).name} (
-        {amount * categoryOfIng.ingredients[1].ratio})
-      </button>
+      <SubMenuButton
+        name={
+          findIngredient(categoryOfIng.ingredients[0].id, masterIngList).name
+        }
+        amount={amount * categoryOfIng.ingredients[0].ratio}
+        onSubMenuButtonClick={handleSubMenuButtonClick}
+      />
+      <SubMenuButton
+        name={
+          findIngredient(categoryOfIng.ingredients[1].id, masterIngList).name
+        }
+        amount={amount * categoryOfIng.ingredients[1].ratio}
+        onSubMenuButtonClick={handleSubMenuButtonClick}
+      />
     </menu>
   );
 }

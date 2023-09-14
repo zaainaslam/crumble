@@ -1,6 +1,7 @@
 1) what the fuck is going on with my loop in Recipe file? Why is ings not working
 2) is "object is possibly undefined" a problem
 3) what things do I really need to import? Do I need to import interfaces to use them as a type?
+4) when passing function as prop, which data type to use?
 
 
 
