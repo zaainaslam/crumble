@@ -1,6 +1,6 @@
 [{
     "id" : "flour",
-    "name" : "flour",
+    "name" : "Flour",
     "default" : "whiteFlour",
     "ingredients": [
         {
@@ -9,6 +9,66 @@
         },
         {
             "id" : "blackFlour",
+            "ratio" : 0.5
+        }
+    ]
+},
+{
+    "id" : "binding",
+    "name" : "Binding Agent",
+    "default" : "chickenEgg",
+    "ingredients": [
+        {
+            "id" : "chickenEgg",
+            "ratio" : 1
+        },
+        {
+            "id" : "horseEgg",
+            "ratio" : 0.3
+        }
+    ]
+},
+{
+    "id" : "sugar",
+    "name" : "Sugar/Sweetener",
+    "default" : "whiteSugar",
+    "ingredients": [
+        {
+            "id" : "whiteSugar",
+            "ratio" : 1
+        },
+        {
+            "id" : "stripedSugar",
+            "ratio" : 0.5
+        }
+    ]
+},
+{
+    "id" : "fat",
+    "name" : "Fat",
+    "default" : "cowButter",
+    "ingredients": [
+        {
+            "id" : "cowButter",
+            "ratio" : 1
+        },
+        {
+            "id" : "duckButter",
+            "ratio" : 0.5
+        }
+    ]
+},
+{
+    "id" : "flavoring",
+    "name" : "Flavoring",
+    "default" : "pumpkin",
+    "ingredients": [
+        {
+            "id" : "pumpkin",
+            "ratio" : 1
+        },
+        {
+            "id" : "fakePumpkin",
             "ratio" : 0.5
         }
     ]

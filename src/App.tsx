@@ -1,14 +1,17 @@
 import "./App.css";
 import Recipe from "./components/Recipe";
+import { IRecipe } from "./data/recipes";
 import { recipe1 } from "./data/recipes";
+import { useState } from "react";
 
 function App() {
+  const [currentRecipe, updateCurrentRecipe] = useState<IRecipe>(recipe1);
   return (
     <>
       <Recipe
-        id={recipe1.id}
-        name={recipe1.name}
-        ingredients={recipe1.ingredients}
+        id={currentRecipe.id}
+        name={currentRecipe.name}
+        ingredients={currentRecipe.ingredients}
       />
     </>
   );

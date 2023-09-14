@@ -48,7 +48,7 @@ export interface IRecipe {
 
 
 
-let masterIngList: IIngredientList[] = [];
+export var masterIngList: IIngredientList[] = [];
 
 
 
