@@ -4,6 +4,9 @@ import { IIngredientList } from "../data/recipes";
 import { IIngredient } from "../data/recipes";
 import { masterIngList } from "../data/recipes";
 import SubMenuButton from "./SubMenuButton";
+import { RecipeContext, RecipeUpdateContext } from "../App";
+
+import { useState, createContext, useContext } from "react";
 
 interface SubMenuProps {
   id: string;
@@ -15,9 +18,12 @@ interface SubMenuProps {
 }
 
 function SubMenu({ id, name, desc, calories, amount, unit }: SubMenuProps) {
+  const recipeUpdated = useContext(RecipeContext);
+  const recipeUpdater = useContext(RecipeUpdateContext);
+
   function handleSubMenuButtonClick() {
     console.log("clicked");
-    updateCurrentRecipe();
+    recipeUpdater(recipe1);
   }
 
   function determineCategory(id: string) {

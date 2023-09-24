@@ -5,17 +5,23 @@ import { recipe1 } from "./data/recipes";
 import { useState } from "react";
 import { createContext } from "react";
 
-//const UserContext = createContext();
+export const RecipeContext = createContext<IRecipe>(recipe1);
+export const RecipeUpdateContext = createContext<any>(null);
 
 function App() {
   const [currentRecipe, updateCurrentRecipe] = useState<IRecipe>(recipe1);
+
   return (
     <>
-      <Recipe
-        id={currentRecipe.id}
-        name={currentRecipe.name}
-        ingredients={currentRecipe.ingredients}
-      />
+      <RecipeContext.Provider value={currentRecipe}>
+        <RecipeUpdateContext.Provider value={updateCurrentRecipe}>
+          <Recipe
+            id={currentRecipe.id}
+            name={currentRecipe.name}
+            ingredients={currentRecipe.ingredients}
+          />
+        </RecipeUpdateContext.Provider>
+      </RecipeContext.Provider>
     </>
   );
 }
