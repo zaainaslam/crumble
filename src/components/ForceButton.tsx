@@ -1,4 +1,4 @@
-function ForceButton(onForceButtonClick: any) {
+function ForceButton({ onForceButtonClick }: any) {
   return (
     <div>
       <button onClick={onForceButtonClick}>force</button>

@@ -11,10 +11,11 @@ export const RecipeUpdateContext = createContext<any>(null);
 
 function App() {
   const [currentRecipe, updateCurrentRecipe] = useState<IRecipe>(recipe1);
+  const [rerender, setRerender] = useState(false);
   console.log("recipe:" + currentRecipe.ingredients[0].name);
 
   function handleForceButtonClick() {
-    //this.forceUpdate();
+    setRerender(!rerender);
     console.log("ran");
   }
   return (
