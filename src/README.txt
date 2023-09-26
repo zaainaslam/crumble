@@ -1,5 +1,11 @@
 NOT REALLY FINISHED TO MY SATISFACTION YET .-.
 
+Setting:
+
+dystopian future where pumpkins are extinct, and
+various genetically engineered health foods
+are popular with millennials
+
 Instructions:
 
 1) click "swap out" to bring up alternate ingredients,
