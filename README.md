@@ -10,7 +10,9 @@ The app takes a cookie recipe from a JSON file, and provides alternative ingredi
 
 Each ingredient has a category, which is its "job" in the recipe. The alternatives suggested are from the same category, and, their amounts are adjusted so that the overall composition of the cookie doesn't change (some ingredients don't need to present as big an amount to have the same effect).
 
+When swapping the ingredients out, you can also view how they affect the calorie total of the recipe.
+
 ![App](img/screenshot3.png)
 
-When swapping the ingredients out, you can also view how they affect the calorie total of the recipe.
+
 
