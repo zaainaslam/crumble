@@ -17,9 +17,19 @@ function Recipe({ id, name, ingredients }: IRecipe) {
   //   );
   // }
 
+  function calcCalories() {
+    let totalCals: number = 0;
+    for (let ingredient of ingredients) {
+      totalCals += ingredient.calories;
+    }
+    return totalCals;
+  }
+
   return (
     <div className="Recipe">
       {name}
+      <br />
+      Total calories: {calcCalories()}
       <Ingredient
         id={ingredients[0].id}
         name={ingredients[0].name}
@@ -27,6 +37,7 @@ function Recipe({ id, name, ingredients }: IRecipe) {
         calories={ingredients[0].calories}
         amount={ingredients[0].amount}
         unit={ingredients[0].unit}
+        ingNo={0}
       />
       <Ingredient
         id={ingredients[1].id}
@@ -35,6 +46,7 @@ function Recipe({ id, name, ingredients }: IRecipe) {
         calories={ingredients[1].calories}
         amount={ingredients[1].amount}
         unit={ingredients[1].unit}
+        ingNo={1}
       />
       <Ingredient
         id={ingredients[2].id}
@@ -43,6 +55,7 @@ function Recipe({ id, name, ingredients }: IRecipe) {
         calories={ingredients[2].calories}
         amount={ingredients[2].amount}
         unit={ingredients[2].unit}
+        ingNo={2}
       />
       <Ingredient
         id={ingredients[3].id}
@@ -51,6 +64,7 @@ function Recipe({ id, name, ingredients }: IRecipe) {
         calories={ingredients[3].calories}
         amount={ingredients[3].amount}
         unit={ingredients[3].unit}
+        ingNo={3}
       />
       <Ingredient
         id={ingredients[4].id}
@@ -59,6 +73,7 @@ function Recipe({ id, name, ingredients }: IRecipe) {
         calories={ingredients[4].calories}
         amount={ingredients[4].amount}
         unit={ingredients[4].unit}
+        ingNo={4}
       />
     </div>
   );

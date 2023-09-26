@@ -1,10 +1,28 @@
-import { IIngredient } from "../data/recipes";
+import { UnitType } from "../data/recipes";
 import SubButton from "./SubButton";
 import SubMenu from "./SubMenu";
 import "../css/Ingredient.css";
 import { useState } from "react";
 
-function Ingredient({ id, name, desc, calories, amount, unit }: IIngredient) {
+interface IngredientProps {
+  id: string;
+  name: string;
+  desc: string;
+  calories: number;
+  amount: number;
+  unit: UnitType;
+  ingNo: number;
+}
+
+function Ingredient({
+  id,
+  name,
+  desc,
+  calories,
+  amount,
+  unit,
+  ingNo,
+}: IngredientProps) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [buttonContents, setButtonContents] = useState<string>("open");
 
@@ -45,6 +63,7 @@ function Ingredient({ id, name, desc, calories, amount, unit }: IIngredient) {
           onMenuClick={() => handleMenuClick()}
         />
         <SubMenu
+          ingNo={ingNo}
           id={id}
           name={name}
           desc={desc}

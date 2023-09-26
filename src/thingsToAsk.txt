@@ -8,3 +8,10 @@
 Things to do:
 
 move find ingredient function to recipes.ts
+conversion
+map??
+desc
+close all other ing menus other than open one
+rerender all
+only render alternative ings
+

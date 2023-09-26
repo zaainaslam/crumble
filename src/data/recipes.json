@@ -11,12 +11,12 @@
             {
                     "id" : "chickenEgg",
                     "amount" : 2,
-                    "unit" : "unit"
+                    "unit" : "piece"
             },
             {
                     "id" : "whiteSugar",
                     "amount" : 3.75,
-                    "unit" : "cup"
+                    "unit" : "gram"
             },
             {
                     "id" : "whiteFlour",
@@ -26,7 +26,7 @@
             {
                     "id" : "pumpkin",
                     "amount" : 1,
-                    "unit" : "unit"
+                    "unit" : "piece"
         }]
         },
     "herb": {

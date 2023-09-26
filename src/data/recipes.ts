@@ -8,8 +8,23 @@ import categories from "./categories.json"
 
 export enum UnitType {
   GRAM = "g",
-  MILLILITER = "ml",
-  PIECE = "pcs",
+  CUP = " cup",
+  PIECE = " pcs",
+}
+
+function getUnit(unit: string) {
+  switch (unit){
+    case "cup":
+      return UnitType.CUP;
+      break;
+    case "gram":
+      return UnitType.GRAM;
+      break;
+    case "piece":
+      return UnitType.PIECE;
+      break;
+
+  }
 }
 
 export interface ICategory {
@@ -84,7 +99,7 @@ for (let i = 0; i < recipes.pumpkinPie.ingredients.length; i++) {
       desc: ing.desc,
       calories: ing.calories,
       amount: recipes.pumpkinPie.ingredients[i].amount,
-      unit: UnitType.GRAM
+      unit: getUnit(recipes.pumpkinPie.ingredients[i].unit)!
     };
 
     console.log(true);
