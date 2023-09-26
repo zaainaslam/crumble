@@ -1,0 +1,8 @@
+.Ingredient {
+    color: black;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 5px;
+    line-height: 1.8;
+    background-color: lightblue;
+  }

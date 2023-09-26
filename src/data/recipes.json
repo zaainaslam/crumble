@@ -1,0 +1,62 @@
+
+{
+    "pumpkinPie": {
+            "recipeId" : 1,
+            "name" : "Pumpkin Pie Cookie",
+            "ingredients" : [{
+                    "id" : "cowButter",
+                    "amount" : 1,
+                    "unit" : "cup"
+            },
+            {
+                    "id" : "chickenEgg",
+                    "amount" : 2,
+                    "unit" : "piece"
+            },
+            {
+                    "id" : "whiteSugar",
+                    "amount" : 3.75,
+                    "unit" : "gram"
+            },
+            {
+                    "id" : "whiteFlour",
+                    "amount" : 2,
+                    "unit" : "cup"
+            },
+            {
+                    "id" : "pumpkin",
+                    "amount" : 1,
+                    "unit" : "piece"
+        }]
+        },
+    "herb": {
+            "recipeId" : 3,
+            "name" : "Herb Cookie",
+            "ingredients" : [{
+                "id" : "duckButter",
+                "amount" : 1,
+                "unit" : "cup"
+        },
+        {
+                "id" : "chickenEgg",
+                "amount" : 2,
+                "unit" : "piece"
+        },
+        {
+                "id" : "whiteSugar",
+                "amount" : 3.75,
+                "unit" : "gram"
+        },
+        {
+                "id" : "whiteFlour",
+                "amount" : 2,
+                "unit" : "cup"
+        },
+        {
+                "id" : "pumpkin",
+                "amount" : 1,
+                "unit" : "piece"
+    }]
+        }
+    }
+    
