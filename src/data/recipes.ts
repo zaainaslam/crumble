@@ -118,6 +118,13 @@ export const recipe1: IRecipe = {
 
 }
 
+export const recipe2: IRecipe = {
+  id: 2,
+  name: recipes.herb.name,
+  ingredients: ingList
+
+}
+
 //categories
 export var categoriesList : ICategory[] = [];
 

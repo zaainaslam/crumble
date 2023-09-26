@@ -1,5 +1,8 @@
 .Recipe{
-    color: rgb(0, 136, 255);
+    color: darkslategray;
     background-color: turquoise;
     padding: 15px;
+    border-radius: 3px;
+
+    
 }

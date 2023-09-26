@@ -15,3 +15,5 @@ close all other ing menus other than open one
 rerender all
 only render alternative ings
 
+<ForceButton onForceButtonClick={() => handleForceButtonClick()} />
+

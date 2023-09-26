@@ -24,7 +24,6 @@ function App() {
       <RecipeContext.Provider value={currentRecipe}>
         <RecipeUpdateContext.Provider value={updateCurrentRecipe}>
           <RerenderContext.Provider value={handleForceButtonClick}>
-            <ForceButton onForceButtonClick={() => handleForceButtonClick()} />
             <Recipe
               id={currentRecipe.id}
               name={currentRecipe.name}

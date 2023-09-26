@@ -33,31 +33,30 @@
             "recipeId" : 3,
             "name" : "Herb Cookie",
             "ingredients" : [{
-                "id" : "almondButter",
+                "id" : "duckButter",
                 "amount" : 1,
                 "unit" : "cup"
-            },
-            {
-                "id" : "flaxseedMeal",
+        },
+        {
+                "id" : "chickenEgg",
+                "amount" : 2,
+                "unit" : "piece"
+        },
+        {
+                "id" : "whiteSugar",
+                "amount" : 3.75,
+                "unit" : "gram"
+        },
+        {
+                "id" : "whiteFlour",
+                "amount" : 2,
+                "unit" : "cup"
+        },
+        {
+                "id" : "pumpkin",
                 "amount" : 1,
-                "unit" : "gram"
-            },
-            {
-                "id" : "coconutSugar",
-                "amount" : 0.5,
-                "unit" : "cup"
-            },
-            {
-                "id" : "oats",
-                "amount" : 3,
-                "unit" : "cup"
-            },
-            {
-                "id" : "oregano",
-                "amount" : 67,
-                "unit" : "gram"
-            }
-            ]
+                "unit" : "piece"
+    }]
         }
     }
     

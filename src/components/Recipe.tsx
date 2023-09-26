@@ -20,7 +20,7 @@ function Recipe({ id, name, ingredients }: IRecipe) {
   function calcCalories() {
     let totalCals: number = 0;
     for (let ingredient of ingredients) {
-      totalCals += ingredient.calories;
+      totalCals += ingredient.calories * ingredient.amount;
     }
     return totalCals;
   }

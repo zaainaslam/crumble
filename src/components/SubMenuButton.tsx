@@ -20,7 +20,7 @@ function SubMenuButton({
   return (
     <button className="SubMenuButton" onClick={onSubMenuButtonClick}>
       {name} ({amount}
-      {unit}) ({calories}kcal)
+      {unit}) ({calories * amount}kcal)
     </button>
   );
 }
