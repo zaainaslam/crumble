@@ -24,7 +24,7 @@ function Ingredient({
   ingNo,
 }: IngredientProps) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [buttonContents, setButtonContents] = useState<string>("change");
+  const [buttonContents, setButtonContents] = useState<string>("swap out");
 
   const returnContents: [] = [];
 
@@ -32,7 +32,7 @@ function Ingredient({
     setMenuOpen(!menuOpen);
 
     if (menuOpen) {
-      setButtonContents("change");
+      setButtonContents("swap out");
     } else {
       setButtonContents("I'm happy");
     }

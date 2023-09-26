@@ -125,7 +125,7 @@ function SubMenu({
   return (
     <menu className="SubMenu">
       <br />
-      calories: {calories}
+      calories: {calories}/{unit.replace(/\s/g, "")}
       <br />
       other {categoryOfIng.name}s:
       <br />
