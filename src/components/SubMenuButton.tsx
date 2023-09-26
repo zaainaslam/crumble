@@ -1,3 +1,7 @@
+import { RerenderContext } from "../App";
+import { useContext } from "react";
+import "../css/SubMenubutton.css";
+
 interface SubMenuButtonProps {
   name: string;
   amount: number;
@@ -14,7 +18,7 @@ function SubMenuButton({
   onSubMenuButtonClick,
 }: SubMenuButtonProps) {
   return (
-    <button onClick={onSubMenuButtonClick}>
+    <button className="SubMenuButton" onClick={onSubMenuButtonClick}>
       {name} ({amount}
       {unit}) ({calories}kcal)
     </button>

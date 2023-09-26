@@ -7,8 +7,10 @@ interface subMenuProps {
 
 function SubButton({ value, onMenuClick }: subMenuProps) {
   return (
-    <div className="SubButton">
-      <button onClick={onMenuClick}>{value} </button>
+    <div>
+      <button className="SubButton" onClick={onMenuClick}>
+        {value}{" "}
+      </button>
     </div>
   );
 }

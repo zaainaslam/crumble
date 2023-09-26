@@ -27,9 +27,8 @@ function Recipe({ id, name, ingredients }: IRecipe) {
 
   return (
     <div className="Recipe">
-      {name}
-      <br />
-      Total calories: {calcCalories()}
+      <h3>{name}</h3>
+      <h4>{calcCalories()}kcal</h4>
       <Ingredient
         id={ingredients[0].id}
         name={ingredients[0].name}

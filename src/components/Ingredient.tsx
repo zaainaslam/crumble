@@ -24,7 +24,7 @@ function Ingredient({
   ingNo,
 }: IngredientProps) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [buttonContents, setButtonContents] = useState<string>("open");
+  const [buttonContents, setButtonContents] = useState<string>("change");
 
   const returnContents: [] = [];
 
@@ -32,9 +32,9 @@ function Ingredient({
     setMenuOpen(!menuOpen);
 
     if (menuOpen) {
-      setButtonContents("open");
+      setButtonContents("change");
     } else {
-      setButtonContents("closed");
+      setButtonContents("I'm happy");
     }
 
     console.log(menuOpen);
@@ -58,10 +58,6 @@ function Ingredient({
       <div className="Ingredient">
         {name}, {amount}
         {unit}{" "}
-        <SubButton
-          value={buttonContents}
-          onMenuClick={() => handleMenuClick()}
-        />
         <SubMenu
           ingNo={ingNo}
           id={id}
@@ -70,6 +66,10 @@ function Ingredient({
           calories={calories}
           amount={amount}
           unit={unit}
+        />
+        <SubButton
+          value={buttonContents}
+          onMenuClick={() => handleMenuClick()}
         />
       </div>
     );

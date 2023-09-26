@@ -4,7 +4,7 @@ import { IIngredientList, UnitType } from "../data/recipes";
 import { IIngredient, IRecipe, ICategory } from "../data/recipes";
 import { masterIngList } from "../data/recipes";
 import SubMenuButton from "./SubMenuButton";
-import { RecipeContext, RecipeUpdateContext } from "../App";
+import { RecipeContext, RecipeUpdateContext, RerenderContext } from "../App";
 
 import { useState, createContext, useContext } from "react";
 
@@ -27,6 +27,7 @@ function SubMenu({
   unit,
   ingNo,
 }: SubMenuProps) {
+  const triggerRerender = useContext(RerenderContext);
   const recipeUpdated = useContext(RecipeContext);
   const recipeUpdater = useContext(RecipeUpdateContext);
 
@@ -54,6 +55,7 @@ function SubMenu({
     console.log(newRecipe.ingredients[0]);
     recipeUpdater(newRecipe);
     console.log();
+    triggerRerender();
     //console.log(recipeUpdated.ingredients[0]);
   }
 
@@ -122,66 +124,80 @@ function SubMenu({
 
   return (
     <menu className="SubMenu">
-      <ul>Calories: {calories}</ul>
-      <ul>{categoryOfIng.name}</ul>
-      <SubMenuButton
-        name={
-          findIngredientInList(categoryOfIng.ingredients[0].id, masterIngList)!
-            .name
-        }
-        amount={
-          (getRatio(
+      <br />
+      calories: {calories}
+      <br />
+      other {categoryOfIng.name}s:
+      <br />
+      <div>
+        <SubMenuButton
+          name={
             findIngredientInList(
               categoryOfIng.ingredients[0].id,
               masterIngList
-            )!.id
-          )! /
-            getRatio(id)!) *
-          amount
-        }
-        calories={
-          findIngredientInList(categoryOfIng.ingredients[0].id, masterIngList)!
-            .calories
-        }
-        unit={unit}
-        onSubMenuButtonClick={() =>
-          handleSubMenuButtonClick(
+            )!.name
+          }
+          amount={
+            (getRatio(
+              findIngredientInList(
+                categoryOfIng.ingredients[0].id,
+                masterIngList
+              )!.id
+            )! /
+              getRatio(id)!) *
+            amount
+          }
+          calories={
             findIngredientInList(
               categoryOfIng.ingredients[0].id,
               masterIngList
-            )!.id
-          )
-        }
-      />
-      <SubMenuButton
-        name={
-          findIngredientInList(categoryOfIng.ingredients[1].id, masterIngList)!
-            .name
-        }
-        amount={
-          (getRatio(
+            )!.calories
+          }
+          unit={unit}
+          onSubMenuButtonClick={() =>
+            handleSubMenuButtonClick(
+              findIngredientInList(
+                categoryOfIng.ingredients[0].id,
+                masterIngList
+              )!.id
+            )
+          }
+        />
+        <br />
+        <SubMenuButton
+          name={
             findIngredientInList(
               categoryOfIng.ingredients[1].id,
               masterIngList
-            )!.id
-          )! /
-            getRatio(id)!) *
-          amount
-        }
-        unit={unit}
-        calories={
-          findIngredientInList(categoryOfIng.ingredients[1].id, masterIngList)!
-            .calories
-        }
-        onSubMenuButtonClick={() =>
-          handleSubMenuButtonClick(
+            )!.name
+          }
+          amount={
+            (getRatio(
+              findIngredientInList(
+                categoryOfIng.ingredients[1].id,
+                masterIngList
+              )!.id
+            )! /
+              getRatio(id)!) *
+            amount
+          }
+          unit={unit}
+          calories={
             findIngredientInList(
               categoryOfIng.ingredients[1].id,
               masterIngList
-            )!.id
-          )
-        }
-      />
+            )!.calories
+          }
+          onSubMenuButtonClick={() =>
+            handleSubMenuButtonClick(
+              findIngredientInList(
+                categoryOfIng.ingredients[1].id,
+                masterIngList
+              )!.id
+            )
+          }
+        />
+      </div>
     </menu>
   );
 }
