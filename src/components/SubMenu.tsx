@@ -4,7 +4,7 @@ import { IIngredientList, UnitType } from "../data/recipes";
 import { IIngredient, IRecipe, ICategory } from "../data/recipes";
 import { masterIngList } from "../data/recipes";
 import SubMenuButton from "./SubMenuButton";
-import { RecipeContext, RecipeUpdateContext, RerenderContext } from "../App";
+import { RecipeContext, RerenderContext, RecipeUpdateContext } from "../App";
 
 import { useState, createContext, useContext } from "react";
 
@@ -14,8 +14,9 @@ interface SubMenuProps {
   desc: string;
   calories: number;
   amount: number;
-  unit: string;
+  unit: UnitType;
   ingNo: number;
+  updateIng: any;
 }
 
 function SubMenu({
@@ -26,6 +27,7 @@ function SubMenu({
   amount,
   unit,
   ingNo,
+  updateIng,
 }: SubMenuProps) {
   const triggerRerender = useContext(RerenderContext);
   const recipeUpdated = useContext(RecipeContext);
@@ -43,19 +45,20 @@ function SubMenu({
     }
   } */
 
-  function handleSubMenuButtonClick(id: string) {
+  function handleSubMenuButtonClick(idNew: string) {
     console.log("submenu clicked");
 
-    let newRecipe: IRecipe = recipeUpdated;
+    let newRecipe: IRecipe = JSON.parse(JSON.stringify(recipeUpdated));
 
     //console.log(newRecipe.ingredients[0]);
 
-    newRecipe.ingredients[ingNo] = replaceIngredient(id, masterIngList)!;
+    newRecipe.ingredients[ingNo] = replaceIngredient(idNew, masterIngList)!;
     //newRecipe.ingredients[0] = newRecipe.ingredients[3];
-    console.log(newRecipe.ingredients[0]);
+    //console.log(newRecipe.ingredients[0]);
+
+    updateIng(newRecipe.ingredients[ingNo]);
     recipeUpdater(newRecipe);
-    console.log();
-    triggerRerender();
+    //triggerRerender();
     //console.log(recipeUpdated.ingredients[0]);
   }
 
@@ -108,7 +111,7 @@ function SubMenu({
             desc: ing.desc,
             calories: ing.calories,
             amount: (getRatio(idNew)! / getRatio(id)!) * amount,
-            unit: UnitType.GRAM,
+            unit: unit,
           };
 
           console.log("math: " + getRatio(idNew)! / getRatio(id)!);

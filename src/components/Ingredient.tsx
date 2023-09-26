@@ -1,8 +1,9 @@
-import { UnitType } from "../data/recipes";
+import { IIngredient, UnitType } from "../data/recipes";
 import SubButton from "./SubButton";
 import SubMenu from "./SubMenu";
 import "../css/Ingredient.css";
-import { useState } from "react";
+import { RecipeUpdateContext, RecipeContext, RerenderContext } from "../App";
+import { useState, useContext } from "react";
 
 interface IngredientProps {
   id: string;
@@ -12,6 +13,7 @@ interface IngredientProps {
   amount: number;
   unit: UnitType;
   ingNo: number;
+  handleCals: any;
 }
 
 function Ingredient({
@@ -22,9 +24,23 @@ function Ingredient({
   amount,
   unit,
   ingNo,
+  handleCals,
 }: IngredientProps) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [buttonContents, setButtonContents] = useState<string>("swap out");
+
+  const [ingChoice, setIngChoice] = useState<IIngredient>({
+    id,
+    name,
+    desc,
+    calories,
+    amount,
+    unit,
+  });
+
+  const recipeUpdater = useContext(RecipeUpdateContext);
+  const recipeUpdated = useContext(RecipeContext);
+  const triggerRerender = useContext(RerenderContext);
 
   const returnContents: [] = [];
 
@@ -33,6 +49,15 @@ function Ingredient({
 
     if (menuOpen) {
       setButtonContents("swap out");
+      let newRecipe = recipeUpdated;
+
+      newRecipe.ingredients[ingNo] = ingChoice;
+
+      handleCals();
+
+      triggerRerender();
+
+      console.log(recipeUpdated.ingredients[ingNo]);
     } else {
       setButtonContents("I'm happy");
     }
@@ -45,8 +70,8 @@ function Ingredient({
   if (!menuOpen) {
     return (
       <div className="Ingredient">
-        {name}, {amount}
-        {unit}{" "}
+        {ingChoice.name}, {ingChoice.amount}
+        {ingChoice.unit}{" "}
         <SubButton
           value={buttonContents}
           onMenuClick={() => handleMenuClick()}
@@ -56,16 +81,17 @@ function Ingredient({
   } else {
     return (
       <div className="Ingredient">
-        {name}, {amount}
-        {unit}{" "}
+        {ingChoice.name}, {ingChoice.amount}
+        {ingChoice.unit}{" "}
         <SubMenu
           ingNo={ingNo}
-          id={id}
-          name={name}
-          desc={desc}
-          calories={calories}
-          amount={amount}
-          unit={unit}
+          id={ingChoice.id}
+          name={ingChoice.name}
+          desc={ingChoice.desc}
+          calories={ingChoice.calories}
+          amount={ingChoice.amount}
+          unit={ingChoice.unit}
+          updateIng={setIngChoice}
         />
         <SubButton
           value={buttonContents}
