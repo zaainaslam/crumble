@@ -15,3 +15,6 @@ Notes:
 
 might implement a thingy where it shows you old cal amount,
 next to what it would be if you swapped out
+
+I was implementing making the description appear when you
+hover over an ingredient when swapping out
