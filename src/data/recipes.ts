@@ -34,25 +34,14 @@ export interface ICategory {
   ingredients: {id:string, ratio: number}[]
 }
 
-export interface IIngredientList {
-  id: string;
-  name: string;
-  desc: string;
-  calories: number;
-}
-
-
 export interface IIngredient {
   id: string;
   name: string;
   desc: string,
   calories: number,
-  amount: number;
-  unit: UnitType;
+  amount?: number;
+  unit?: UnitType;
 }
-
-
-
 
 
 export interface IRecipe {
@@ -63,14 +52,14 @@ export interface IRecipe {
 
 
 
-export var masterIngList: IIngredientList[] = [];
+export var masterIngList: IIngredient[] = [];
 
 
 
 for (let i = 0; i < ingredients.length; i++) {
 
 
-  let masterIngArray: IIngredientList = {
+  let masterIngArray: IIngredient = {
     id: ingredients[i].id,
     name: ingredients[i].name,
     desc: ingredients[i].desc,

@@ -2,7 +2,7 @@ import "../css/SubButton.css";
 
 interface subMenuProps {
   value: string;
-  onMenuClick: any;
+  onMenuClick: () => void;
 }
 
 function SubButton({ value, onMenuClick }: subMenuProps) {

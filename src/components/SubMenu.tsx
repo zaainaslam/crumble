@@ -1,6 +1,6 @@
 import "../css/SubMenu.css";
 import { categoriesList } from "../data/recipes";
-import { IIngredientList, UnitType } from "../data/recipes";
+import { UnitType } from "../data/recipes";
 import { IIngredient, IRecipe, ICategory } from "../data/recipes";
 import { masterIngList } from "../data/recipes";
 import SubMenuButton from "./SubMenuButton";
@@ -16,7 +16,7 @@ interface SubMenuProps {
   amount: number;
   unit: UnitType;
   ingNo: number;
-  updateIng: any;
+  updateIng: (value: IIngredient) => any;
 }
 
 function SubMenu({
@@ -32,6 +32,7 @@ function SubMenu({
   const triggerRerender = useContext(RerenderContext);
   const recipeUpdated = useContext(RecipeContext);
   const recipeUpdater = useContext(RecipeUpdateContext);
+  const currentIng = "";
 
   type RecipeIngsMapType = {
     [id: string]: IIngredient;
@@ -73,11 +74,11 @@ function SubMenu({
     return categoriesList[0];
   }
 
-  function findIngredientInList(id: string, ingList: IIngredientList[]) {
+  function findIngredientInList(id: string, ingList: IIngredient[]) {
     for (let i = 0; i < ingList.length; i++) {
       for (let ing of ingList) {
         if (id === ing.id) {
-          let matchedIng: IIngredientList = {
+          let matchedIng: IIngredient = {
             id: ing.id,
             name: ing.name,
             desc: ing.desc,
@@ -101,7 +102,7 @@ function SubMenu({
     }
   }
 
-  function replaceIngredient(idNew: string, ingList: IIngredientList[]) {
+  function replaceIngredient(idNew: string, ingList: IIngredient[]) {
     for (let i = 0; i < ingList.length; i++) {
       for (let ing of ingList) {
         if (idNew === ing.id) {
@@ -133,73 +134,28 @@ function SubMenu({
       other {categoryOfIng.name}s:
       <br />
       <div>
-        <SubMenuButton
-          name={
-            findIngredientInList(
-              categoryOfIng.ingredients[0].id,
-              masterIngList
-            )!.name
-          }
-          amount={
-            (getRatio(
-              findIngredientInList(
-                categoryOfIng.ingredients[0].id,
-                masterIngList
-              )!.id
-            )! /
-              getRatio(id)!) *
-            amount
-          }
-          calories={
-            findIngredientInList(
-              categoryOfIng.ingredients[0].id,
-              masterIngList
-            )!.calories
-          }
-          unit={unit}
-          onSubMenuButtonClick={() =>
-            handleSubMenuButtonClick(
-              findIngredientInList(
-                categoryOfIng.ingredients[0].id,
-                masterIngList
-              )!.id
-            )
-          }
-        />
+        {categoryOfIng.ingredients.map((ingredient) => (
+          <SubMenuButton
+            name={findIngredientInList(ingredient.id, masterIngList)!.name}
+            amount={
+              (getRatio(
+                findIngredientInList(ingredient.id, masterIngList)!.id
+              )! /
+                getRatio(id)!) *
+              amount
+            }
+            calories={
+              findIngredientInList(ingredient.id, masterIngList)!.calories
+            }
+            unit={unit}
+            onSubMenuButtonClick={() =>
+              handleSubMenuButtonClick(
+                findIngredientInList(ingredient.id, masterIngList)!.id
+              )
+            }
+          />
+        ))}
         <br />
-        <SubMenuButton
-          name={
-            findIngredientInList(
-              categoryOfIng.ingredients[1].id,
-              masterIngList
-            )!.name
-          }
-          amount={
-            (getRatio(
-              findIngredientInList(
-                categoryOfIng.ingredients[1].id,
-                masterIngList
-              )!.id
-            )! /
-              getRatio(id)!) *
-            amount
-          }
-          unit={unit}
-          calories={
-            findIngredientInList(
-              categoryOfIng.ingredients[1].id,
-              masterIngList
-            )!.calories
-          }
-          onSubMenuButtonClick={() =>
-            handleSubMenuButtonClick(
-              findIngredientInList(
-                categoryOfIng.ingredients[1].id,
-                masterIngList
-              )!.id
-            )
-          }
-        />
       </div>
     </menu>
   );

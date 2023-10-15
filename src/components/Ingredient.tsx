@@ -13,7 +13,7 @@ interface IngredientProps {
   amount: number;
   unit: UnitType;
   ingNo: number;
-  handleCals: any;
+  handleCals: () => number;
 }
 
 function Ingredient({
@@ -38,7 +38,7 @@ function Ingredient({
     unit,
   });
 
-  const recipeUpdater = useContext(RecipeUpdateContext);
+  //const recipeUpdater = useContext(RecipeUpdateContext);
   const recipeUpdated = useContext(RecipeContext);
   const triggerRerender = useContext(RerenderContext);
 
@@ -89,8 +89,8 @@ function Ingredient({
           name={ingChoice.name}
           desc={ingChoice.desc}
           calories={ingChoice.calories}
-          amount={ingChoice.amount}
-          unit={ingChoice.unit}
+          amount={ingChoice.amount!}
+          unit={ingChoice.unit!}
           updateIng={setIngChoice}
         />
         <SubButton
