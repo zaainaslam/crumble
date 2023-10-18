@@ -1,5 +1,5 @@
 import { IIngredient, UnitType } from "../data/recipes";
-import SubButton from "./SubButton";
+import GenericButton from "./GenericButton";
 import SubMenu from "./SubMenu";
 import "../css/Ingredient.css";
 import { RecipeUpdateContext, RecipeContext, RerenderContext } from "../App";
@@ -72,7 +72,7 @@ function Ingredient({
       <div className="Ingredient">
         {ingChoice.name}, {ingChoice.amount}
         {ingChoice.unit}{" "}
-        <SubButton
+        <GenericButton
           value={buttonContents}
           onMenuClick={() => handleMenuClick()}
         />
@@ -93,7 +93,7 @@ function Ingredient({
           unit={ingChoice.unit!}
           updateIng={setIngChoice}
         />
-        <SubButton
+        <GenericButton
           value={buttonContents}
           onMenuClick={() => handleMenuClick()}
         />
