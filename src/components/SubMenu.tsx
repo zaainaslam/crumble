@@ -7,6 +7,7 @@ import SubMenuButton from "./SubMenuButton";
 import { RecipeContext, RerenderContext, RecipeUpdateContext } from "../App";
 
 import { useState, createContext, useContext } from "react";
+import GenericButton from "./GenericButton";
 
 interface SubMenuProps {
   id: string;
@@ -45,6 +46,22 @@ function SubMenu({
 
     }
   } */
+
+  function findMenuButtonValue(id: string, masterIngList: IIngredient[]) {
+    let matchedIng: IIngredient = findIngredientInList(id, masterIngList)!;
+    let amountOfIng: number =
+      (getRatio(matchedIng.id)! / getRatio(id)!) * amount;
+
+    return (
+      matchedIng.name +
+      " (" +
+      amountOfIng +
+      unit +
+      ") (" +
+      matchedIng.calories * amountOfIng +
+      "kcal)"
+    );
+  }
 
   function handleSubMenuButtonClick(idNew: string) {
     console.log("submenu clicked");
@@ -135,20 +152,9 @@ function SubMenu({
       <br />
       <div>
         {categoryOfIng.ingredients.map((ingredient) => (
-          <SubMenuButton
-            name={findIngredientInList(ingredient.id, masterIngList)!.name}
-            amount={
-              (getRatio(
-                findIngredientInList(ingredient.id, masterIngList)!.id
-              )! /
-                getRatio(id)!) *
-              amount
-            }
-            calories={
-              findIngredientInList(ingredient.id, masterIngList)!.calories
-            }
-            unit={unit}
-            onSubMenuButtonClick={() =>
+          <GenericButton
+            value={findMenuButtonValue(ingredient.id, masterIngList)}
+            onMenuClick={() =>
               handleSubMenuButtonClick(
                 findIngredientInList(ingredient.id, masterIngList)!.id
               )
