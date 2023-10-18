@@ -13,7 +13,7 @@ interface IngredientProps {
   amount: number;
   unit: UnitType;
   ingNo: number;
-  handleCals: () => number;
+  handleCals: () => void;
 }
 
 function Ingredient({

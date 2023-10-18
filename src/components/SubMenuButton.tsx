@@ -7,10 +7,16 @@ interface SubMenuButtonProps {
   amount: number;
   calories: number;
   unit: string;
-  onSubMenuButtonClick: (idNew: string) => void;
+  onSubMenuButtonClick: any;
 }
 
-function SubMenuButton({ value, onSubMenuButtonClick }: SubMenuButtonProps) {
+function SubMenuButton({
+  name,
+  amount,
+  calories,
+  unit,
+  onSubMenuButtonClick,
+}: SubMenuButtonProps) {
   return (
     <button className="SubMenuButton" onClick={onSubMenuButtonClick}>
       {name} ({amount}

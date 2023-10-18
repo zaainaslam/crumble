@@ -47,8 +47,8 @@ function SubMenu({
     }
   } */
 
-  function findMenuButtonValue(id: string, masterIngList: IIngredient[]) {
-    let matchedIng: IIngredient = findIngredientInList(id, masterIngList)!;
+  function findMenuButtonValue(ingId: string, masterIngList: IIngredient[]) {
+    let matchedIng: IIngredient = findIngredientInList(ingId, masterIngList)!;
     let amountOfIng: number =
       (getRatio(matchedIng.id)! / getRatio(id)!) * amount;
 
